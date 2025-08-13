@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CodeAlpha — Music Player</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="player-card">
+      <div class="cover-wrap">
+        <img id="cover" src="assets/covers/cover1.jpg" alt="Album Cover" />
+        <div class="vinyl"></div>
+      </div>
+
+      <div class="meta">
+        <h1 id="title">Title</h1>
+        <p id="artist">Artist</p>
+      </div>
+
+      <div class="progress">
+        <div class="time">
+          <span id="currentTime">0:00</span>
+          <span id="totalTime">0:00</span>
+        </div>
+        <input id="seek" type="range" min="0" value="0" step="0.1" />
+      </div>
+
+      <div class="controls">
+        <button id="btnShuffle" class="btn" aria-label="Shuffle" title="Shuffle">🔀</button>
+        <button id="btnPrev" class="btn" aria-label="Previous" title="Previous">⏮️</button>
+        <button id="btnPlay" class="btn btn-primary" aria-label="Play/Pause" title="Play/Pause">▶️</button>
+        <button id="btnNext" class="btn" aria-label="Next" title="Next">⏭️</button>
+        <button id="btnRepeat" class="btn" aria-label="Repeat" title="Repeat">🔁</button>
+      </div>
+
+      <div class="vol-autoplay">
+        <div class="volume">
+          <button id="btnMute" class="btn" aria-label="Mute/Unmute" title="Mute/Unmute">🔈</button>
+          <input id="volume" type="range" min="0" max="1" step="0.01" />
+        </div>
+        <label class="autoplay">
+          <input id="autoplay" type="checkbox" />
+          <span>Autoplay</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="playlist-card">
+      <header>
+        <h2>Playlist</h2>
+        <input id="filter" type="text" placeholder="Filter by title or artist…" />
+      </header>
+      <ul id="playlist" class="playlist"></ul>
+    </section>
+  </main>
+
+  <!-- Hidden audio element -->
+  <audio id="audio"></audio>
+
+  <footer class="note">
+    <p>Keyboard: <kbd>Space</kbd> Play/Pause • <kbd>N</kbd>/<kbd>P</kbd> Next/Prev •
+      <kbd>←</kbd>/<kbd>→</kbd> Seek • <kbd>↑</kbd>/<kbd>↓</kbd> Volume</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
